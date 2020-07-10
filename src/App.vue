@@ -1,36 +1,40 @@
 <template>
   <div id="app">
-    <div id = "tar-bar">
-      <div class="tar-bar-item">主页</div>
-      <div class="tar-bar-item">商品</div>
-      <div class="tar-bar-item">购物车</div>
-      <div class="tar-bar-item">我的</div>
-    </div>
+    <tarbar>
+      <tabBariItem>
+        <img slot="item-img" src="@/assets/image/home.svg"/>
+        <div slot="item-text">主页</div>
+      </tabBariItem>
+      <tabBariItem>
+        <img slot="item-img" src="@/assets/image/all.svg"/>
+        <div slot="item-text">分类</div>
+      </tabBariItem>
+      <tabBariItem>
+        <img slot="item-img" src="@/assets/image/cat.svg"/>
+        <div slot="item-text">购物车</div>
+      </tabBariItem>
+      <tabBariItem>
+        <img slot="item-img" src="@/assets/image/project-file.svg"/>
+        <div slot="item-text">我的</div>
+      </tabBariItem>
+    </tarbar>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
+  import tarbar from "./components/tarbar/Tarbar"
+  import tabBariItem from "./components/tarbar/TarbarItem"
+
+  export default {
+  name: 'App',
+      components:{
+          tarbar ,
+          tabBariItem
+      }
 }
 </script>
 
 <style>
   @import "./assets/css/base.css";
-  #tar-bar{
-    display: flex;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #f1f1f1;
-    box-shadow: 0px -1px 10px rgba(0 0 0 0.3)
-  }
-  .tar-bar-item{
-    flex: 1;
-    text-align: center;
-    height: 49px;
-  }
-
 
 </style>
