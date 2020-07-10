@@ -1,24 +1,25 @@
 <template>
   <div id="app">
+    <router-view></router-view>
     <tarbar>
-      <tabBariItem>
+      <tabBariItem path="/home" activeColor="blue">
         <img slot="item-img" src="@/assets/image/home.svg"/>
         <img slot="item-img-active" src="@/assets/image/home-active.svg"/>
         <div slot="item-text">主页</div>
       </tabBariItem>
-      <tabBariItem>
-        <img slot="item-img" src="@/assets/image/all.svg"/>
-        <img slot="item-img-active" src="@/assets/image/all-active.svg"/>
+      <tabBariItem path="/category">
+        <img slot="item-img" src="@/assets/image/category.svg"/>
+        <img slot="item-img-active" src="@/assets/image/category-active.svg"/>
         <div slot="item-text">分类</div>
       </tabBariItem>
-      <tabBariItem>
-        <img slot="item-img" src="@/assets/image/cat.svg"/>
-        <img slot="item-img-active" src="@/assets/image/cat-active.svg"/>
+      <tabBariItem path="/cart">
+        <img slot="item-img" src="@/assets/image/cart.svg"/>
+        <img slot="item-img-active" src="@/assets/image/cart-active.svg"/>
         <div slot="item-text">购物车</div>
       </tabBariItem>
-      <tabBariItem>
-        <img slot="item-img" src="@/assets/image/project-file.svg"/>
-        <img slot="item-img-active" src="@/assets/image/project-file-active.svg"/>
+      <tabBariItem path="/profile">
+        <img slot="item-img" src="@/assets/image/profile.svg"/>
+        <img slot="item-img-active" src="@/assets/image/profile-active.svg"/>
         <div slot="item-text">我的</div>
       </tabBariItem>
     </tarbar>

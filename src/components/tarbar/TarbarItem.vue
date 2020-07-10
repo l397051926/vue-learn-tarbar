@@ -1,18 +1,37 @@
 <template>
-  <div class="tar-bar-item">
+  <div class="tar-bar-item" @click="itemClick">
     <div v-if="!isActive"><slot name="item-img"></slot></div>
     <div v-else><slot name="item-img-active"></slot></div>
-    <div :class="{active : isActive}"><slot name="item-text"></slot></div>
-    <h2>{{isActive}}</h2>
+    <div :style="activeStyle" ><slot name="item-text"></slot></div>
   </div>
 </template>
 
 <script>
     export default {
         name: "TarbarItem",
+        props: {
+            path: String,
+            activeColor :{
+                type: String,
+                default: "red"
+            }
+        },
         data(){
             return{
-                isActive: false
+                // isActive: false
+            }
+        },
+        computed:{
+            isActive (){
+                return this.$route.path.includes(this.path)
+            },
+            activeStyle(){
+                return this.isActive ? {color: this.activeColor} : {}
+            }
+        },
+        methods:{
+            itemClick(){
+                this.$router.replace(this.path)
             }
         }
     }
